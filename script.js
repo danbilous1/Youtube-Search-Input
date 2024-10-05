@@ -45,17 +45,31 @@ searchInput.addEventListener('keydown', function(event) {
   }
 
   if (event.key === 'Enter' && searchInput.value.trim() !== '') {
+    const button = document.createElement('button'); 
+    button.classList.add('btn-close'); 
+    button.setAttribute('aria-label', 'Close'); 
     
     const newItem = document.createElement('li');
     
 
     newItem.classList.add('list-group-item');
     newItem.innerText = searchInput.value;
+    newItem.appendChild(button);
     searchList.appendChild(newItem);
     searchInput.value = '';
     activeMode();
   }
 });
+
+function btnClose() {
+  document.querySelectorAll(".btn-close").forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.closest('li').remove();
+    });
+  });
+}
+
+btnClose();
 
 function activeMode() {
   document.querySelectorAll(".list-group-item").forEach((item, index) => {
@@ -74,3 +88,4 @@ function activeMode() {
 }
 
 activeMode();
+
