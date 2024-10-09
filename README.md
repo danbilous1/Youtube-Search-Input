@@ -9,4 +9,4 @@
 I was watching Youtube and catched glimpse on Youtube Search Input, and It inspired me to make it.
 
 ###### Warning
-There are still some bugs, that will be fix in the next week.
+There are still some bugs, that will be fixed in the next week.
